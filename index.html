@@ -27,13 +27,13 @@
                 </div>
               </div>
     </header>
-
+<!-- main -->
     <main class="w-full bg-[#F8F8F8]">
         <h1 class="pl-32 pt-16 text-2xl font-bold   ">Kitchenwear</h1>
         <div class="flex flex-col lg:flex-row w-10/12 m-auto pt-8">
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                <div onclick="hand" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                         <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod1.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                         <div class="text-center">
                             <div class="rating">
@@ -164,9 +164,28 @@
     
                     <!-- calculation part -->
                     <div class="w-[270px] lg:-mt-60 pl-6 gap-6">
-                        <div class="card w-[270px] h-[300px] bg-white shadow-xl mx-6">
+                        <div class="card w-[270px] h-[300px] bg-white shadow-xl mx-6 px-6">
                             
-
+                            <div class="right-side-container col-4 text-left pt-12">
+                                <h4 class="pb-6">Code: Hero</h4>
+                                <hr class="pt- pb-6">
+                                <div class="selected-items" id="selected-items"></div>
+                                <div class="cart-box font-medium">
+                                  <h6>Total Price: <span class="text-gray-300"><span id="total">00.00</span>TK</span></h6>
+                                  <h6 class="">Discount: <span  class="text-gray-300"><span>00.00</span> TK</span></h6>
+                                  <h5 class=" pb-6">Total:<span  class="text-gray-300"> <span>00.00</span>TK</span></h5>
+                                </div>
+                                <hr class="pt-6">
+                      
+                                <div class="relative">
+                                    <!-- Container for positioning -->
+                                    <button class="bg-pink-500 text-white py-2 px-4 rounded shadow-md absolute -bottom-16 left-1/2 transform w-[240px] -translate-x-1/2 translate-y-1/2">
+                                        Make Purchase
+                                    </button>
+                                </div>
+                            
+                              </div>
+                            </div>
                         </div>
     
                     </div>
@@ -179,5 +198,6 @@
                 
         
     </main>
+    
 </body>
 </html>
