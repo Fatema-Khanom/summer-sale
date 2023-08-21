@@ -28,10 +28,9 @@ function handleClickBtn(target) {
     document.getElementById("sub-total").innerText = subtotal.toFixed(2);
 }
 
-// Apply discount and update total
 const applyDiscountBtn = document.getElementById("apply-discount");
 
-/* applyDiscountBtn.disabled = true; */
+
 
 applyDiscountBtn.addEventListener("click", function() {
     calculateTotal(this);
@@ -51,34 +50,9 @@ function calculateTotal(target) {
     $('#discount').html(discount.toFixed(2));
     $('#total').html(total.toFixed(2));
 }  
+const modal = document.getElementById('my_modal_1');
+const closeButton = modal.querySelector('button');
 
-// Your existing JavaScript code
-
-
-const makePurchaseBtn = document.getElementById("make-purchase");
-const closeModalBtn = document.getElementById("closeModal");
-const goHomeBtn = document.getElementById("goHomeBtn");
-const modal = document.getElementById("myModal");
-
-makePurchaseBtn.addEventListener("click", function() {
-    if (total > 0.00) {
-        showModal();
-    }
-});
-
-closeModalBtn.addEventListener("click", function() {
-    closeModal();
-});
-
-goHomeBtn.addEventListener("click", function() {
-    // Redirect to the homepage
-    window.location.href = "";
-});
-
-function showModal() {
-    modal.classList.remove("hidden");
-}
-
-function closeModal() {
-    modal.classList.add("hidden");
-}
+closeButton.addEventListener('click', () => {
+    modal.close();
+}); 
