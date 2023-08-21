@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summer Sale</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -33,7 +34,7 @@
         <div class="flex flex-col lg:flex-row w-10/12 m-auto pt-8">
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div onclick="hand" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                <div onclick="handleClickBtn(this)" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                         <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod1.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                         <div class="text-center">
                             <div class="rating">
@@ -43,13 +44,16 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             </div>
-                              <h2 class="text-xl font-semibold font-black">K. Accessories</h2>
-                              <p class="text-xl pb-4 text-gray-400"><span>39.00</span> TK</p>
+                             
+                                <h2 class=" text-xl font-semibold font-black" >K. Accessories</h2>
+                             
+
+                              <p class="text-xl pb-4 text-gray-400">39.00 TK</p>
                           
                         </div>
                     </div>
 
-                    <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                    <div onclick="handleClickBtn(this)" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                         <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod2.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                         <div class="text-center">
                             <div class="rating">
@@ -60,12 +64,12 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             </div>
                               <h2 class="text-xl font-semibold font-black">K. Accessories</h2>
-                              <p class="text-xl pb-4 text-gray-400"><span>25.00</span> TK</p>
+                              <p class="text-xl pb-4 text-gray-400">25.00 TK</p>
                           
                         </div>
                     </div>
 
-                    <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl  mx-6 ">
+                    <div onclick="handleClickBtn(this)" class="card w-[270px] h-[300px] bg-base-100 shadow-xl  mx-6 ">
                         <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod3.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                         <div class="text-center">
                             <div class="rating">
@@ -76,7 +80,7 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             </div>
                               <h2 class="text-xl font-semibold font-black">Home Cooker</h2>
-                              <p class="text-xl pb-4 text-gray-400"><span>49.00</span> TK</p>
+                              <p class="text-xl pb-4 text-gray-400">49.00 TK</p>
                           
                         </div>
                         
@@ -86,20 +90,17 @@
 
                 </div>
 
-                <!-- calculation part -->
-                <div class="  px-6 w-[270px]">
-                    <div class="card w-[270px] h-[160px] bg-white shadow-xl p-4 mx-6 gap-6 ">
+                 <div class="px-6 w-[270px]">
+                    <div class="card w-[270px] h-[160px] bg-white shadow-xl p-4 mx-6 gap-6">
                         <h2 class="text-2xl font-medium">Have coupon?</h2>
-                        <div class="flex items-center ">
-                            <input type="text" class=" w-3/4 py-2 px-2 border rounded-l-md" placeholder="Coupon code">
-                            <button class="bg-[#E527B2]  text-white py-2 px-2 rounded-r-md">Apply</button>
-                          </div>
+                        <div class="flex items-center">
+                            <input type="text" id="cuponCodeInput" class="w-3/4 py-2 px-2 border rounded-l-md" placeholder="Coupon code">
+                            <button id="apply-discount" class="bg-[#E527B2] text-white py-2 px-2 rounded-r-md">Apply</button>
+                        </div>
                     </div>
-                   
                 </div>
 
-                
-                   
+                   <!--  -->
             </div>
 
           <!-- sportswear section -->
@@ -109,7 +110,7 @@
             <div class="flex flex-col lg:flex-row w-10/12 m-auto pt-8 pb-16">
                 <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
     
-                    <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                    <div onclick="handleClickBtn(this)" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                             <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod4.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                             <div class="text-center">
                                 <div class="rating">
@@ -120,12 +121,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                   <h2 class="text-xl font-semibold font-black">Sports back Cap</h2>
-                                  <p class="text-xl pb-4 text-gray-400"><span>49.00</span> TK</p>
+                                  <p class="text-xl pb-4 text-gray-400">49.00 TK</p>
                               
                             </div>
                         </div>
     
-                        <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                        <div onclick="handleClickBtn(this)" class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                             <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod5.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                             <div class="text-center">
                                 <div class="rating">
@@ -136,12 +137,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                   <h2 class="text-xl font-semibold font-black">Full Jersey Set</h2>
-                                  <p class="text-xl pb-4 text-gray-400"><span>69.00</span> TK</p>
+                                  <p class="text-xl pb-4 text-gray-400">69.00 TK</p>
                               
                             </div>
                         </div>
     
-                        <div class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
+                        <div onclick="handleClickBtn(this)"class="card w-[270px] h-[300px] bg-base-100 shadow-xl mx-6 ">
                             <figure class="bg-[#F8F8F8] m-5"><img src="./images/prod6.png" alt="Shoes" class="  pt-16 pb-8"/></figure>
                             <div class="text-center">
                                 <div class="rating">
@@ -152,7 +153,7 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                   <h2 class="text-xl font-semibold font-black">Sports cates</h2>
-                                  <p class="text-xl pb-4 text-gray-400"><span>159.00</span> TK</p>
+                                  <p class="text-xl pb-4 text-gray-400">159.00 TK</p>
                               
                             </div>
                             
@@ -162,32 +163,63 @@
     
                     </div>
     
-                    <!-- calculation part -->
-                    <div class="w-[270px] lg:-mt-60 pl-6 gap-6">
-                        <div class="card w-[270px] h-[300px] bg-white shadow-xl mx-6 px-6">
-                            
-                            <div class="right-side-container col-4 text-left pt-12">
-                                <h4 class="pb-6">Code: Hero</h4>
-                                <hr class="pt- pb-6">
-                                <div class="selected-items" id="selected-items"></div>
-                                <div class="cart-box font-medium">
-                                  <h6>Total Price: <span class="text-gray-300"><span id="total">00.00</span>TK</span></h6>
-                                  <h6 class="">Discount: <span  class="text-gray-300"><span>00.00</span> TK</span></h6>
-                                  <h5 class=" pb-6">Total:<span  class="text-gray-300"> <span>00.00</span>TK</span></h5>
+                   <!-- 
+                        <div class="w-[270px] lg:-mt-60 pl-6 gap-6">
+                            <div class="card w-[270px] h-max bg-white shadow-xl mx-6 px-6">
+                                <div class="right-side-container col-4 text-left pt-12">
+                                    <div class="selected-items" id="selected-items"></div>
+                                    <hr class="pt- pb-6">
+                                    <div class="cart-box font-medium">
+                                        <h6>Total Price: <span class="text-gray-500"><span id="sub-total">00.00</span>TK</span></h6>
+                                        <h6 class="">Discount: <span class="text-gray-500"><span id="discount">00.00</span> TK</span></h6>
+                                        <h5 class="pb-6">Total:<span class="text-gray-500"><span id="total">00.00</span>TK</span></h5>
+                                    </div>
+                                    <hr class="pt-16">
+                                    <div class="relative">
+                                         <button  id="apply-discount" class="bg-pink-500 text-white py-2 px-4 rounded shadow-md absolute -bottom-2 left-1/2 transform w-[240px] -translate-x-1/2 translate-y-1/2" disabled>
+                                            Make Purchase
+                                        </button> 
+                                   
+                                    </div>
                                 </div>
-                                <hr class="pt-6">
-                      
-                                <div class="relative">
-                                    <!-- Container for positioning -->
-                                    <button class="bg-pink-500 text-white py-2 px-4 rounded shadow-md absolute -bottom-16 left-1/2 transform w-[240px] -translate-x-1/2 translate-y-1/2">
-                                        Make Purchase
-                                    </button>
-                                </div>
-                            
-                              </div>
                             </div>
-                        </div>
-    
+                        </div>  -->
+                        
+    <div class="w-[270px] lg:-mt-60 pl-6 gap-6">
+        <div class="card w-[270px] h-max bg-white shadow-xl mx-6 px-6">
+            <div class="right-side-container col-4 text-left pt-12">
+                <div class="selected-items" id="selected-items"></div>
+                <hr class="pt- pb-6">
+                <div class="cart-box font-medium">
+                    <h6>Total Price: <span class="text-gray-500"><span id="sub-total">00.00</span>TK</span></h6>
+                    <h6 class="">Discount: <span class="text-gray-500"><span id="discount">00.00</span> TK</span></h6>
+                    <h5 class="pb-6">Total:<span class="text-gray-500"><span id="total">00.00</span>TK</span></h5>
+                </div>
+                <hr class="pt-16">
+                <div class="relative">
+                     <button id="make-purchase" class="bg-pink-500 text-white py-2 px-4 rounded shadow-md absolute -bottom-2 left-1/2 transform w-[240px] -translate-x-1/2 translate-y-1/2" disabled>
+                        Make Purchase
+                    </button> 
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the modal HTML right after your existing content -->
+    <div class="fixed inset-0 flex items-center justify-center z-50 hidden" id="myModal">
+        <div class="bg-white p-6 rounded shadow-md w-80">
+            <span class="absolute top-2 right-2 cursor-pointer" id="closeModal">&times;</span>
+            <img src="path-to-your-congrats-image.jpg" alt="Congratulations" class="mx-auto mb-4 w-24">
+            <h2 class="text-xl font-semibold">Congratulations!</h2>
+            <button id="goHomeBtn" class="bg-pink-500 text-white px-4 py-2 rounded mt-4">Go to Homepage</button> 
+           
+        </div>
+    </div>
+                        
+
+                        <!--  -->
                     </div>
     
                     
@@ -198,6 +230,9 @@
                 
         
     </main>
-    
+
+    <script src="index.js"></script>
+
+    <
 </body>
 </html>
